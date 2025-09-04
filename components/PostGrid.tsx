@@ -15,7 +15,7 @@ const posts: Post[] = [
     { id: 2, image: "/company/wello.jpg", description: "Wello" },
     { id: 3, image: "/company/testvelly.jpg", description: "Testvalley" },
     { id: 4, image: "/company/planby.jpg", description: "Planby" },
-    { id: 5, image: "/game/eevee_game.jpg", description: "EEVEE RUN! (미니게임)" },
+    { id: 5, image: "/game/eevee_game.jpg", description: "EEVEE RUN! (미니게임 시작하기)" },
 ];
 
 export default function PostGrid() {
@@ -46,18 +46,30 @@ export default function PostGrid() {
 
             {selectedPost && (
                 <Modal onClose={() => setSelectedPost(null)}>
-                    <div className="w-fit bg-gray-100">
+                    <div className="w-fit bg-gray-100 p-4 rounded">
                         <Image
-                            width={500} height={500}
+                            width={500}
+                            height={500}
                             src={selectedPost.image}
                             alt={selectedPost.description}
-                            className="object-contain rounded "
+                            className="object-contain rounded"
                         />
-                        <p className={'text-center font-semibold text-xl my-3 '}>{selectedPost.description}</p>
-
+                        {selectedPost.id === 5 ? (
+                            <p
+                                className="text-center font-semibold text-xl my-3 cursor-pointer text-blue-400 underline"
+                                onClick={() => window.open("https://eevee-run.vercel.app/", "_blank")}
+                            >
+                                {selectedPost.description}
+                            </p>
+                        ) : (
+                            <p className="text-center font-semibold text-xl my-3">
+                                {selectedPost.description}
+                            </p>
+                        )}
                     </div>
                 </Modal>
             )}
+
         </div>
     );
 }

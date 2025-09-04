@@ -20,30 +20,32 @@ export default function Home() {
               <div className="flex space-x-6 sm:space-x-8 text-center font-semibold text-xs sm:text-sm mt-1">
                 <div className="flex flex-col items-start">
                   <span>5</span>
-                  <span className="font-normal">Project</span>
+                  <span className="font-semibold">Project</span>
                 </div>
                 <div className="flex flex-col items-start">
                   <span>2025</span>
-                  <span className="font-normal">Version</span>
+                  <span className="font-semibold">Version</span>
                 </div>
                 <div className="flex flex-col items-start">
                   <span>000301</span>
-                  <span className="font-normal">Commit</span>
+                  <span className="font-semibold">Commit</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mt-4 text-xs sm:text-sm text-gray-700">
+          <div className="mt-4 text-xs sm:text-sm text-gray-700 font-semibold">
             Frontend Engineer (2021.10 - )
           </div>
 
           <div className="mt-4 flex gap-2 sm:gap-4">
-            <Link
-                href="/mypage/follow"
+            <a
+                href="https://github.com/isydaisy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 px-6 py-2 bg-blue-500 text-white rounded text-xs sm:text-sm text-center"
             >
               Follow
-            </Link>
+            </a>
             <SendButton onClick={() => setShowForm(true)} />
 
             {showForm && <ContactForm onClose={() => setShowForm(false)} />}
